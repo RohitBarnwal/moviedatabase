@@ -23,7 +23,6 @@ in the correct folder. I have put both app engine folder and my project moviedat
 
 Need more help on google app engine SDK:
 
-
  https://cloud.google.com/appengine/docs/python/gettingstartedpython27/introduction
 
 
