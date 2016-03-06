@@ -1,0 +1,54 @@
+.home{
+	margin-top:34px;
+	margin-left:34px;
+}
+.text-center{
+	text-align:center;
+}
+.poster_image{
+	float:left;
+	width:50%;
+	height:600px;
+	margin-bottom:2%;
+}
+
+.movie_title{
+	float:left;
+	margin-left:5%;
+	width:45%;
+	height:600px;
+	margin-bottom:2%;
+}
+
+.poster_detail{
+	float:left;
+	width:50%;
+	height:600px;
+	margin-bottom:2%;
+}
+
+.movie_detail{
+	float:left;
+	margin-left:5%;
+	width:45%;
+	margin-bottom:2%;
+}
+
+.message{
+color:#0000FF
+}
+
+body {
+    background-color: lightblue;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-left: 5%
+} 
+
+.disable{
+	float:left;
+	margin-right: 20%;
+	font-size: 150%;
+}
+ .footer, .push {
+    clear: both;
+    }

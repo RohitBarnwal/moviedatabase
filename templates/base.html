@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/main.css" />
+<title>{% block title %}  {% endblock %}</title> 
+	{% block head %}  {% endblock %}
+</head>
+<body>
+
+	<div class="home">
+		<a href="/"><img src="/static/image/home.png" />
+		<h3>Home</h3></a>
+	</div>
+	<h1 class="text-center">{% block heading %}{% endblock %}</h1>
+
+	{% if message %}
+	<div id="message" class="message">{{ message }}</div>
+	{% endif %}
+
+	<div id="content">{% block content %} {% endblock %}</div>
+
+	<div class="footer" id="footer">
+		<hr>
+		Sample movie database application. Developed by: Rohit Barnwal <br>
+		contact: rohitbarnwal7@gmail.com <br> <a
+			href=https://about.me/rohitbarnwal>about me</a><br> <a
+			href=https://in.linkedin.com/in/rohit-barnwal-a4836925>contact
+			through linkedin</a>
+
+	</div>
+</body>
+</html>
