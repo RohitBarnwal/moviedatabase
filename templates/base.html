@@ -6,9 +6,9 @@
 </head>
 <body>
 
-	<div class="home">
+	<div>
 		<a href="/"><img src="/static/image/home.png" />
-		<h3>Home</h3></a>
+		<h3 class="home">Home</h3></a>
 	</div>
 	<h1 class="text-center">{% block heading %}{% endblock %}</h1>
 
@@ -16,15 +16,15 @@
 	<div id="message" class="message">{{ message }}</div>
 	{% endif %}
 
-	<div id="content">{% block content %} {% endblock %}</div>
+	<div class="text-center">{% block content %} {% endblock %}</div>
 
-	<div class="footer" id="footer">
+	<div class="footer">
 		<hr>
-		Sample movie database application. Developed by: Rohit Barnwal <br>
-		contact: rohitbarnwal7@gmail.com <br> 
-		<a href=https://about.me/rohitbarnwal>about me</a><br> 
-		<a href=https://in.linkedin.com/in/rohit-barnwal-a4836925>contact through linkedin</a><br>
-		<a href= https://github.com/RohitBarnwal/moviedatabase>to fork this project on github</a>
+		<span class="footer-detail">Sample movie database application. Developed by: Rohit Barnwal <br>
+		contact: rohitbarnwal7@gmail.com </span> 
+		<a class="footer-detail" href=https://about.me/rohitbarnwal>about me</a>
+		<a class="footer-detail" href=https://in.linkedin.com/in/rohit-barnwal-a4836925>contact through linkedin</a>
+		<a class="footer-detail" href= https://github.com/RohitBarnwal/moviedatabase>to fork this project on github</a>
 
 	</div>
 </body>

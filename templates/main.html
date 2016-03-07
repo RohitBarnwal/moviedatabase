@@ -3,17 +3,13 @@
 {% block heading %}Welcome to Rohit's movie database{% endblock %} 
 
 {% block content %}
-A simple movie database application, that let's you add new movie as well as view the list of movies added in database.
+<span >A simple movie database application, that let's you add new movie as well as view the list of movies added in database. </span>
 
-<h3>Click <a href="/list">here</a> to  view to list movies stored in the database </h3>
-<h3>Click <a href="/new">here</a> to add a new movie to the database</h3>
-
-
-<form action="/list">
+<form class="movie_list" action="/list">
     <input type="submit" value="Click here to list all movies">
 </form>
 
-<form action="/new">
+<form class="movie_list marg_bottom" action="/new">
     <input type="submit" value="Click here to add a new movie">
 </form>
 {% endblock %}

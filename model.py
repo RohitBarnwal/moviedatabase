@@ -1,23 +1,22 @@
 from google.appengine.ext import db
-from google.appengine.ext import ndb
 
 
 class Movie(db.Model):
     
+    """Models an individual Movie entry."""
     created = db.DateTimeProperty(auto_now_add=True)
     movie_title = db.StringProperty()
     website = db.StringProperty()
     plot = db.TextProperty()
     cast = db.TextProperty()
     image = db.BlobProperty()
-    title_image = ndb.BlobProperty()
     enabled = db.BooleanProperty()
     
 
     @staticmethod
     def get_movies():
         """
-        Return list of movies added in database ordered by created date, maximum 1000
+        Return list of movies added in database ordered by created date, maximum 1000. If database size is large, use pagination.
         """
         return Movie.all().filter( "enabled =", True ).order('-created').fetch(1000)
 

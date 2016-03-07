@@ -66,16 +66,18 @@ class AddNewMovieHandler(RequestHandler):
     def post(self, command):
 
         if command == 'add':
-            image = self.request.get("image")
-            website =  self.request.get("website").replace("http://","")
+            website =  self.request.get("website").replace("http://","").replace("https://","")
             title = self.request.get("title")
-            movie_exiting = model.Movie.exiting_movie(title)
+            movie_exiting = model.Movie.exiting_movie(title.lower())
             if not movie_exiting:
+                image = self.request.get("image")
+                image = db.Blob(image) if image else None
+                
                 movie = model.Movie(movie_title=title, cast= (self.request.get("cast")), \
-                        plot= (self.request.get("plot")) , image=db.Blob(image), \
+                        plot= (self.request.get("plot")) , image=image, \
                         website= website ,enabled=True )
                 movie.put()
-                self._process("The movie has been added.")
+                self._process("The movie has been added successfully.")
             else:
                 self._process('Movie title entered in already existing, change title name if you still want to add it')
         else:

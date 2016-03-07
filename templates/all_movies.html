@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block title %}Welcome to Rohit's movie database{% endblock %} 
+{% block heading %}Welcome to Rohit's movie database{% endblock %} 
+
+{% block content %}
+
+<h2>Currently {{ movies|length }} movie{{ movies|length|pluralize}} present in database listed below ordered by date added.</h2>
+
+<h3>Click <a href="/new">here</a> to add new movie to this database</h3>
+{% for movie in movies %}
+	{% if movie.image %}
+		<img class="poster_image" src="/image/{{ movie.key }}/" alt="{{ movie.movie_title }}" /><br>
+	{% else %}
+		<img class="poster_image" src="/static/image/no-image-big.jpg" alt="{{ movie.movie_title }}" /><br>
+	{% endif %}
+	<div class="movie_detail">
+		<h1>Movie title: {{ movie.movie_title }}</h1>
+		<br>
+		Date added: {{ movie.created }}
+		<h2>Movie cast: {{ movie.cast }}</h2>
+		<a href="/detail/{{ movie.key }}/">More Detail</a> <br>
+	</div>
+{% endfor %}
+
+{% endblock %}

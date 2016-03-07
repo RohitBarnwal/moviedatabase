@@ -1,64 +1,58 @@
-.home{
-	margin-top:34px;
-	margin-left:34px;
-}
-.text-center{
-	text-align:center;
-}
-.poster_image{
-	float:left;
-	width:50%;
-	height:600px;
-	margin-bottom:2%;
+.home {
+	margin-left: 20px;
 }
 
-.movie_title{
-	float:left;
-	margin-left:5%;
-	width:45%;
-	height:600px;
-	margin-bottom:2%;
+.text-center {
+	text-align: center;
 }
 
-.poster_detail{
-	float:left;
-	width:50%;
-	height:600px;
-	margin-bottom:2%;
+.poster_image {
+	float: left;
+	width: 50%;
+	height: 600px;
+	margin-bottom: 2%;
 }
 
-.movie_detail{
-	float:left;
-	margin-left:5%;
-	width:45%;
-	margin-bottom:2%;
+.movie_detail {
+	float: left;
+	margin-left: 5%;
+	width: 45%;
+	margin-bottom: 2%;
+	text-align: left;
+	height: 600px
 }
 
-.message{
-color:#0000FF
+.message {
+	color: #0000FF;
+	font-size:20px;
 }
 
-body {
-    background-color: lightblue;
-    font-family: Helvetica, Arial, sans-serif;
-    margin-left: 5%
-} 
-
-.disable{
-	float:left;
-	margin-right: 20%;
-	font-size: 150%;
+.footer {
+	width: 100%;
+	display: block;
+	float: left;
 }
- .footer, .push {
-    clear: both;
-    }
-    
-.button {
-    background-color: #000000;
-    color: #FFFFFF;
-    float: right;
-    padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+
+.movie_list {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.movie_list input {
+	width: 50%;
+	height: 70px;
+	font-size: 25px;
+}
+
+.marg_bottom {
+	margin-bottom: 150px;
+}
+
+.footer-detail {
+	float: left;
+	width: 25%;
+	text-align: center;
 }

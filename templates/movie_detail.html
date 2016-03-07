@@ -4,17 +4,25 @@
 {% block heading %}Movie title {{ movie.movie_title }}{% endblock %}
 
 {% block content %}
-    <img class = "poster_detail" src="/image/{{ movie.key }}/" alt="{{ movie.title }}"/>
+
+	{% if movie.image %}
+		<img class="poster_image" src="/image/{{ movie.key }}/" alt="{{ movie.movie_title }}" /><br>
+	{% else %}
+		<img class="poster_image" src="/static/image/no-image-big.jpg" alt="{{ movie.movie_title }}" /><br>
+	{% endif %}
     
     <div class = "movie_detail">
     	<h2>Movie cast: {{ movie.cast }}</h2>
 		 Movie plot: {{ movie.plot }}  <br><br>
-		 Date added: {{ movie.created }}
-	     Further reading:&nbsp;<a href="http://{{movie.website}}">Movie Link</a> 
+		 Date added: {{ movie.created }}<br><br>
+		 {% if movie.website %}
+	     	Further reading:&nbsp;<a href="http://{{movie.website}}">Movie Link</a> 
+	     {% endif %}
+	     <form action="/disable/{{ movie.key }}/">
+	    	<input type="submit" value="Disable Movie">
+		</form>
 	</div>
     
-    <form action="/disable/{{ movie.key }}/">
-    	<input type="submit" value="Disable Movie">
-	</form>
+    
   
 {% endblock %}
