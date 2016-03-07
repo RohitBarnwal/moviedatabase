@@ -1,21 +1,19 @@
-{% extends "base.html" %} {% block title %}Welcome to Rohit's movie
-database{% endblock %} {% block heading %}Welcome to Rohit's movie
-database{% endblock %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}Welcome to Rohit's movie database{% endblock %} 
+{% block heading %}Welcome to Rohit's movie database{% endblock %} 
 
-<h2>Currently,{{ movies|length }} movie{{ movies|length|pluralize}} present in database listed below ordered by date added.</h2>
+{% block content %}
+A simple movie database application, that let's you add new movie as well as view the list of movies added in database.
 
-<h3>Click <a href="/new">here</a> to add new movie to this database</h3>
-<ul>
-	{% for movie in movies %}
-		<img class="poster_image" src="/image/{{ movie.key }}/" alt="{{ movie.movie_title }}" /><br>
-		<div class="movie_title">
-			<h1>Movie title: {{ movie.movie_title }}</h1>
-			<br>
-			Date added: {{ movie.created }}
-			<h2>Movie cast: {{ movie.cast }}</h2>
-			<a href="/detail/{{ movie.key }}/">More Detail</a> <br>
-		</div>
-	{% endfor %}
-</ul>
+<h3>Click <a href="/list">here</a> to  view to list movies stored in the database </h3>
+<h3>Click <a href="/new">here</a> to add a new movie to the database</h3>
 
+
+<form action="/list">
+    <input type="submit" value="Click here to list all movies">
+</form>
+
+<form action="/new">
+    <input type="submit" value="Click here to add a new movie">
+</form>
 {% endblock %}

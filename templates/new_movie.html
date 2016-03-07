@@ -9,14 +9,14 @@
 <br/>
 <form action="/new/add/" method="post" enctype="multipart/form-data">
   
-  <label for="title">Movie Title:</label><input type="text" placeholder="movie title" name="title"/><br/>
-  <label for="cast">Movie Cast: </label><input type="text" placeholder="movie cast" name="cast"/><br/>
+  <label for="title">Movie Title:</label><input type="text" placeholder="movie title" name="title" required/><br/>
+  <label for="cast">Movie Cast: </label><input type="text" placeholder="movie cast" name="cast" required/><br/>
   
   <label for="plot">Movie Plot: </label><br><textarea  name="plot" rows="20" cols="120"></textarea><br>
 
 
   <label for="website">External Link: </label><input type="text" placeholder="website links like IMDB" name="website"/><br/>
-  <label for="image">Upload movie poster: </label><input type="file" name="image"/><br/>
+  <label for="image">Upload movie poster(size less then 1 MB): </label><input type="file" name="image"/><br/>
   
   <input type="submit" value="Add Movie"/>
 </form>

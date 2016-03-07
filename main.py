@@ -9,6 +9,7 @@ import model
 
 import os
 
+
 class RequestHandler(webapp.RequestHandler):
     
     def render(self, path, data=None):
@@ -16,26 +17,30 @@ class RequestHandler(webapp.RequestHandler):
             data = {}
         self.response.out.write(template.render(path, data))
 
-    
     def error( self, code ):
         webapp.RequestHandler.error( self, code )
         if code >= 500 and code <= 599:
             path = os.path.join(os.path.dirname(__file__), 'templates/50x.html')
             self.render(path)
-#             self.response.out.write(template.render(path, {}))
         if code == 404:
             path = os.path.join(os.path.dirname(__file__), 'templates/404.html')
             self.render(path)
-#             self.response.out.write(template.render(path, {}))
 
 
 class HomeHandler(RequestHandler):
     def get(self):
         
-        data = {'movies': model.Movie.get_movies()}
         path = os.path.join(os.path.dirname(__file__), 'templates/main.html')
-        self.render(path, data)
+        self.render(path)
 
+
+class ListAllMovieHandler(RequestHandler):
+    def get(self):
+        
+        data = {'movies': model.Movie.get_movies()}
+        path = os.path.join(os.path.dirname(__file__), 'templates/all_movies.html')
+        self.render(path, data)
+        
 
 class MovieDetailHandler(RequestHandler):
 
@@ -67,8 +72,8 @@ class AddNewMovieHandler(RequestHandler):
             movie_exiting = model.Movie.exiting_movie(title)
             if not movie_exiting:
                 movie = model.Movie(movie_title=title, cast= (self.request.get("cast")), \
-                                plot= (self.request.get("plot")) , image=db.Blob(image), \
-                                website= website ,enabled=True )
+                        plot= (self.request.get("plot")) , image=db.Blob(image), \
+                        website= website ,enabled=True )
                 movie.put()
                 self._process("The movie has been added.")
             else:
@@ -83,8 +88,6 @@ class ImageHandler(RequestHandler):
         if movie.image:
             self.response.headers['Content-Type'] = "image/png"
             self.response.out.write(movie.image)
-#             self.response.out.write(template.render(path, data))
-#             self.render(movie.image)
         else:
             self.error(404)
 
@@ -108,6 +111,7 @@ class NotFound(RequestHandler):
 
 app = webapp.WSGIApplication( [
     ('/', HomeHandler),
+    ('/list', ListAllMovieHandler),
     ('/new', AddNewMovieHandler),
     ('/new/(.*)/', AddNewMovieHandler),
     ('/detail/(.*)/', MovieDetailHandler),

@@ -12,8 +12,9 @@
 		 Date added: {{ movie.created }}
 	     Further reading:&nbsp;<a href="http://{{movie.website}}">Movie Link</a> 
 	</div>
-	<div class="disable">
-	    <a href="/disable/{{ movie.key }}/">Disable Movie</a> 
-    </div>
+    
+    <form action="/disable/{{ movie.key }}/">
+    	<input type="submit" value="Disable Movie">
+	</form>
   
 {% endblock %}

@@ -16,8 +16,8 @@ Steps:
 Make sure, you have google app engine files after unzipping (https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.33.zip)
 in the correct folder. I have put both app engine folder and my project moviedatabase in my workspace only.
 
-3. Congratulations your server is running at http://localhost:8080
- and datastore can be seen at http://localhost:8000
+Congratulations your server is running at http://localhost:8080
+and datastore can be seen at localhost:8000/datastore
 
 hosted here: feel free to add your movie http://rohitmoviedatabase.appspot.com/
 
