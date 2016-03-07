@@ -4,7 +4,7 @@ REQUIREMENTS
     python2.7
     App Engine SDK - Development tools for Google App Engine 
 
-Created and tested using python 2.7 App engine SDK 1.9.25 on ubuntu 13.04.
+Created and tested using python 2.7 App engine SDK 1.9.25 on ubuntu 14.04.
 
 Steps: 
 
