@@ -16,9 +16,17 @@
 
 
   <label for="website">External Link: </label><input type="text" placeholder="website links" name="website"/><br/>
-  <label for="image">Upload movie poster(size less then 1 MB): </label><input type="file" name="image"/><br/>
+  <label for="image">Upload movie poster(size less then 1 MB): </label><input type="file" name="image" required/><br/>
+  <select name="actor_id">
+	{% for name, actor_id in actors %}
+    	<option value={{actor_id}}> {{ name }}</option><br><br>
+	{% endfor %} 
+  </select>
+
   
   <input type="submit" value="Add Movie"/>
 </form>
+
+	<a href="/newactor"> Click here if your actor is not listed</a> <br><br>
 </div>
 {% endblock %}

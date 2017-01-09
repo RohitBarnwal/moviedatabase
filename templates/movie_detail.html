@@ -5,11 +5,7 @@
 
 {% block content %}
 
-	{% if movie.image %}
-		<img class="poster_image" src="/image/{{ movie.key }}/" alt="{{ movie.movie_title }}" /><br>
-	{% else %}
-		<img class="poster_image" src="/static/image/no-image-big.jpg" alt="{{ movie.movie_title }}" /><br>
-	{% endif %}
+	<img class="poster_image" src="/image/{{ movie_id }}/" alt="{{ movie.movie_title }}" /><br>
     
     <div class = "movie_detail">
     	<h2>Movie cast: {{ movie.cast }}</h2>
@@ -17,12 +13,23 @@
 		 Date added: {{ movie.created }}<br><br>
 		 {% if movie.website %}
 	     	Further reading:&nbsp;<a href="http://{{movie.website}}">Movie Link</a> 
-	     {% endif %}
-	     <form action="/disable/{{ movie.key }}/">
+	     {% endif %} <br>
+	     
+	     <a href="/actordetail/{{ actor_id }}/">  Leading Actor/Actress </a> <br><br> 
+	     <form action="/disable/{{ movie_id }}/">
 	    	<input type="submit" value="Disable Movie">
 		</form>
+		Movie reviews:
+		
+		{% for review in movie.reviews %}
+		
+			{{ review }}
+		{% endfor %}
 	</div>
-    
-    
-  
+	
+	<form action="/addreview/{{ movie_id}}/" method="post" >
+			<label for="review">Review: </label><input type="text" placeholder="add review" name="review"/><br/>
+	    	<input type="submit" value="pPost review">
+		</form>
+
 {% endblock %}

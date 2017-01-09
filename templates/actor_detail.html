@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Actor Name:  {{ actor.name }}{% endblock %}
+{% block heading %}Actor Details {% endblock %}
+
+{% block content %}
+
+	<img class="poster_image" src="/image/{{ actor_id }}/" alt="{{ actor.name }}" /><br>
+    
+    
+    <div class = "movie_detail">
+    <h1>Actor Name: {{ actor.name }}</h1>
+		
+		About: {{ actor.about }} <br> <br>
+		External link: {{ actor.website }}
+		Previous movies:<br>
+   {% for name, movie_id in movies %}
+		<h3> Movie name:  {{ name }} </h3>
+	    <form action="/detail/{{ movie_id }}/">
+	    	<input type="submit" value="View more about this movie">
+		</form>
+	</div>
+	
+	{% endfor %}
+    
+  
+{% endblock %}

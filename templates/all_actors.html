@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block title %}Welcome to Rohit's movie database{% endblock %} 
+{% block heading %}Welcome to Rohit's movie database{% endblock %} 
+
+{% block content %}
+
+<h2>Currently {{ actors|length }} actor {{ actors|length|pluralize}} present in database listed below ordered by date added.</h2>
+
+<h3>Click <a href="/newactor">here</a> to add new actor to this database</h3>
+{% for name, actor_id in actors %}
+
+
+
+<img class="poster_image" src="/image/{{ actor_id }}/" alt="{{ title }}" /><br>
+
+	<div class="actor_detail">
+		<h1>Actor Name: {{ name }}</h1>
+		
+		<a href="/actordetail/{{ actor_id }}/"> {{name }}</a> <br><br>
+		
+		<a href= "/givenactormovie/{{actor_id}}/">More {{ name }} movies</a>
+	</div>
+{% endfor %}
+
+{% endblock %}

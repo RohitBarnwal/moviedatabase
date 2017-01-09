@@ -13,7 +13,7 @@
 	margin-bottom: 2%;
 }
 
-.movie_detail {
+.movie_detail, .actor_detail {
 	float: left;
 	margin-left: 5%;
 	width: 45%;
