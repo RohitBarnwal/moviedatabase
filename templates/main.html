@@ -5,11 +5,23 @@
 {% block content %}
 <span >A simple movie database application, that let's you add new movie as well as view the list of movies added in database. </span>
 
-<form class="movie_list" action="/list">
-    <input type="submit" value="Click here to list all movies">
+<form class= "movie_list" action="/searchmovie" method="post">
+  
+	<label for="title"><h3>Movie Title:</h3><br></label><input type="text" placeholder="enter movie title" name="title" required/><br/>
+
+    <input type="submit" value="Search Movie"/>
+
 </form>
 
-<form class="movie_list marg_bottom" action="/new">
+<form class="movie_list" action="/list">
+    <input type="submit" value="Click here to view all movies">
+</form>
+
+<form class="movie_list" action="/new">
     <input type="submit" value="Click here to add a new movie">
+</form>
+
+<form class="movie_list marg_bottom" action="/listactors">
+    <input type="submit" value="Click here to list all actors">
 </form>
 {% endblock %}
