@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Add a new actor/actress{% endblock %}
+{% block heading %}Add a new actor/actress{% endblock %}
+
+{% block content %}
+<div id="movie_new">
+<strong>Add new movie to list</strong>
+<br/>
+<form action="/newactor/add/" method="post" enctype="multipart/form-data">
+  
+  <label for="name">Actor Name:</label><input type="text" placeholder="actor name" name="name" required/><br/>
+  <label for="about">About the actor: </label><br><textarea rows="20" cols="120" placeholder="about the actor" name="about" required/></textarea><br/>
+  
+  <label for="website">External Link: </label><input type="text" placeholder="website links" name="website"/><br/>
+  <label for="image">Upload movie poster(size less then 1 MB): </label><input type="file" name="image"/><br/>
+  
+  <input type="submit" value="Add Actor"/>
+</form>
+</div>
+{% endblock %}
